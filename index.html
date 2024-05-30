@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Autocomplete with Algolia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.17.2/dist/algoliasearch-lite.umd.js" integrity="sha256-X2G+vjV8i6Jj2NSGFTvy6Z4q2AlmF5aH0HiIpWJ8eU4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-recent-searches"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-plugin-query-suggestions"></script>
+  <script type="module" src="main.js"></script> <!-- Tu archivo JavaScript -->
+  <style>
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+.input-text {
+  width: calc(100% - 60px);
+  padding: 5px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.tarjeta {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  margin: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div id="autocomplete"></div>
+  <div class="form-container">
+    <h1>Formulario de Imagen</h1>
+    <form id="imageForm">
+      <div class="form-row">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" class="input-text" required>
+      </div>
+
+      <div class="form-row">
+        <label for="urlimagen">URL de la Imagen:</label>
+        <input type="text" id="urlimagen" name="urlimagen" class="input-text" required>
+      </div>
+
+      <div class="form-row">
+        <label for="alt">Texto Alternativo:</label>
+        <input type="text" id="alt" name="alt" class="input-text" required>
+      </div>
+
+      <div class="form-row">
+        <input type="submit" value="Enviar" class="submit-btn">
+      </div>
+    </form>
+  </div>
+  <button id="search-button">Buscar</button>
+</body>
+</html>
